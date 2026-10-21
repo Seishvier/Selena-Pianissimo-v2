@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selena: Pianissimo — Punishing Gray Raven</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== PARTICLE CANVAS ===== -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ===== MUSIC PLAYER ===== -->
+  <div class="music-player" id="musicPlayer">
+    <button class="music-btn" id="musicToggle" aria-label="Toggle music">
+      <span class="music-icon">♪</span>
+      <span class="music-pulse"></span>
+    </button>
+    <div class="music-info" id="musicInfo">
+      <span class="music-title">Pianissimo — Theme</span>
+      <div class="music-controls">
+        <button id="playPause" aria-label="Play/Pause">▶</button>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.3">
+      </div>
+    </div>
+    <audio id="bgMusic" loop>
+      <!-- Replace with your own royalty-free track -->
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="main-nav" id="mainNav">
+    <div class="nav-logo">S<span>P</span></div>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#biodata">Biodata</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#gameplay">Gameplay</a></li>
+      <li><a href="#qr">QR Code</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home" class="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-subtitle reveal">Punishing: Gray Raven</p>
+      <h1 class="hero-title reveal">
+        <span class="title-line">Selena</span>
+        <span class="title-line accent">Pianissimo</span>
+      </h1>
+      <p class="hero-tagline reveal">"The hall of art welcomes everyone. My cello will always sing for you."</p>
+      <div class="hero-badges reveal">
+        <span class="badge">S-Rank</span>
+        <span class="badge">Physical</span>
+        <span class="badge">Attacker</span>
+        <span class="badge">Glaciation</span>
+      </div>
+      <a href="#biodata" class="btn-primary reveal">Explore Her Story ↓</a>
+    </div>
+    <div class="hero-scroll-hint">
+      <span></span><span></span><span></span>
+    </div>
+  </section>
+
+  <!-- ===== BIODATA SECTION ===== -->
+  <section id="biodata" class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Character Biodata</h2>
+      <p class="section-desc reveal">Core information about the opera singer turned Construct.</p>
+
+      <div class="biodata-grid">
+        <div class="biodata-card reveal">
+          <div class="biodata-icon">🎂</div>
+          <h3>Birthday</h3>
+          <p>September 27</p>
+        </div>
+        <div class="biodata-card reveal">
+          <div class="biodata-icon">📏</div>
+          <h3>Height</h3>
+          <p>163 cm</p>
+        </div>
+        <div class="biodata-card reveal">
+          <div class="biodata-icon">⚖️</div>
+          <h3>Weight</h3>
+          <p>41 kg</p>
+        </div>
+        <div class="biodata-card reveal">
+          <div class="biodata-icon">🎖️</div>
+          <h3>Rank</h3>
+          <p>S-Rank Construct</p>
+        </div>
+        <div class="biodata-card reveal">
+          <div class="biodata-icon">⚔️</div>
+          <h3>Class</h3>
+          <p>Attacker / Physical</p>
+        </div>
+        <div class="biodata-card reveal">
+          <div class="biodata-icon">🎻</div>
+          <h3>Frame</h3>
+          <p>BPF-06 Pianissimo</p>
+        </div>
+        <div class="biodata-card reveal">
+          <div class="biodata-icon">🎨</div>
+          <h3>Affiliation</h3>
+          <p>WGAA / Babylonia</p>
+        </div>
+        <div class="biodata-card reveal">
+          <div class="biodata-icon">🌸</div>
+          <h3>Favorite Flower</h3>
+          <p>Iris</p>
+        </div>
+      </div>
+
+      <div class="biodata-details reveal">
+        <h3>Appearance</h3>
+        <p>
+          Selena is a slender young woman with long, flowing black hair that features vibrant
+          cyan-blue streaks and inner highlights. Her eyes are a deep violet-purple, though some
+          depictions show them as blue depending on her frame. She is intrinsically linked to
+          music and is often portrayed with her cello or Bowstring Rapier.[reference:0]
+        </p>
+        <h3>Personality</h3>
+        <p>
+          Gentle, kind, and deeply devoted to art, Selena carries a quiet resilience. Despite
+          the trauma she has endured, she remains compassionate and finds solace in music. She
+          is known for her maturity and calmness in operations, though those close to her can
+          glimpse moments of solitude and depression.[reference:1]
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STORY SECTION ===== -->
+  <section id="story" class="section section-dark">
+    <div class="container">
+      <h2 class="section-title reveal">Her Story</h2>
+      <p class="section-desc reveal">From opera stage to the battlefield — a journey of loss and rebirth.</p>
+
+      <div class="story-timeline">
+        <div class="story-item reveal">
+          <div class="story-marker"></div>
+          <div class="story-content">
+            <h3>The Rising Star of Babylonia</h3>
+            <p>
+              Once an opera singer and artist, Selena was born in Babylonia and received an
+              aristocratic-style education. Her beautiful voice and musical talents made her
+              the most anticipated rising star in the World Government Association of Art
+              (WGAA).[reference:2]
+            </p>
+          </div>
+        </div>
+
+        <div class="story-item reveal">
+          <div class="story-marker"></div>
+          <div class="story-content">
+            <h3>The Space Station Incident</h3>
+            <p>
+              During a battle at a space station, Selena went missing. She was saved by an
+              "agent" and began a long journey on Earth to retrieve her memories. At the end of
+              that journey, she found herself again and returned to Babylonia as a new
+              person.[reference:3]
+            </p>
+          </div>
+        </div>
+
+        <div class="story-item reveal">
+          <div class="story-marker"></div>
+          <div class="story-content">
+            <h3>Transformation and Trauma</h3>
+            <p>
+              Selena suffered prolonged exposure to a Hetero-core shard, and her body was
+              restructured by the Red Tide. Her M.I.N.D. was severely damaged, and she endured
+              phantom pain even after regaining her memories. She became a Transcendant before
+              eventually returning to Babylonia.[reference:4][reference:5]
+            </p>
+          </div>
+        </div>
+
+        <div class="story-item reveal">
+          <div class="story-marker"></div>
+          <div class="story-content">
+            <h3>Rebirth as Pianissimo</h3>
+            <p>
+              The Pianissimo frame was created based on Capriccio, specifically adjusted to suit
+              Selena's habits and to alleviate the traumatic phantom pain in her M.I.N.D. It was
+              co-developed by the Science Council and the WGAA.[reference:6][reference:7]
+            </p>
+          </div>
+        </div>
+
+        <div class="story-item reveal">
+          <div class="story-marker"></div>
+          <div class="story-content">
+            <h3>The Meaning of "Pianissimo"</h3>
+            <p>
+              Selena chose the name "Pianissimo" together with the Gray Raven Commandant. It
+              serves as a reminder that the hall of art welcomes everyone, and that her cello
+              will always sing for everyone she encounters. The name became the pillar that
+              helped her stand up again and again in the storm.[reference:8]
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACCORDION: SECRETS -->
+      <div class="accordion reveal">
+        <h3 class="accordion-title">Hidden Secrets</h3>
+        <div class="accordion-item">
+          <button class="accordion-header">The White Floral Vine Pattern <span>+</span></button>
+          <div class="accordion-body">
+            <p>
+              The white floral vine pattern on her frame is a gift from the most important
+              person to Selena. Iris is her favorite flower. In the past, she could only see
+              it in a test tube, but during her journey on Earth, she finally saw them in full
+              bloom after rain.[reference:9]
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Connection to the Punishing Virus <span>+</span></button>
+          <div class="accordion-body">
+            <p>
+              Selena can "hear" the remaining "sounds" of the Red Tide and use their power to
+              fight. However, this causes a heavy load on her M.I.N.D., forcing Pianissimo into
+              a "Noise state" after a certain period. Once healed, she can harness the power
+              again.[reference:10]
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">A One-Man Orchestra <span>+</span></button>
+          <div class="accordion-body">
+            <p>
+              The powerful computing power of Pianissimo's core enables Selena to play five
+              parts simultaneously. Her latest interest is performing symphonies in the
+              concert hall as a one-man band, serving every role from each part to the
+              conductor.[reference:11]
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY SECTION ===== -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Gallery</h2>
+      <p class="section-desc reveal">A collection of Selena: Pianissimo artwork. Click any image to enlarge.</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal" data-src="https://picsum.photos/seed/selena1/800/1000" data-caption="Pianissimo — Official Art">
+          <img src="https://picsum.photos/seed/selena1/400/500" alt="Selena Pianissimo 1" loading="lazy">
+          <div class="gallery-overlay"><span>View</span></div>
+        </div>
+        <div class="gallery-item reveal" data-src="https://picsum.photos/seed/selena2/800/1000" data-caption="Shimmering Tide — Alternate Costume">
+          <img src="https://picsum.photos/seed/selena2/400/500" alt="Selena Pianissimo 2" loading="lazy">
+          <div class="gallery-overlay"><span>View</span></div>
+        </div>
+        <div class="gallery-item reveal" data-src="https://picsum.photos/seed/selena3/800/1000" data-caption="Threads of Destiny — Alternate Costume">
+          <img src="https://picsum.photos/seed/selena3/400/500" alt="Selena Pianissimo 3" loading="lazy">
+          <div class="gallery-overlay"><span>View</span></div>
+        </div>
+        <div class="gallery-item reveal" data-src="https://picsum.photos/seed/selena4/800/1000" data-caption="Festival Scene — Kimono">
+          <img src="https://picsum.photos/seed/selena4/400/500" alt="Selena Pianissimo 4" loading="lazy">
+          <div class="gallery-overlay"><span>View</span></div>
+        </div>
+        <div class="gallery-item reveal" data-src="https://picsum.photos/seed/selena5/800/1000" data-caption="Shiromuku — White Kimono">
+          <img src="https://picsum.photos/seed/selena5/400/500" alt="Selena Pianissimo 5" loading="lazy">
+          <div class="gallery-overlay"><span>View</span></div>
+        </div>
+        <div class="gallery-item reveal" data-src="https://picsum.photos/seed/selena6/800/1000" data-caption="Pianissimo — Combat Stance">
+          <img src="https://picsum.photos/seed/selena6/400/500" alt="Selena Pianissimo 6" loading="lazy">
+          <div class="gallery-overlay"><span>View</span></div>
+        </div>
+        <div class="gallery-item reveal" data-src="https://picsum.photos/seed/selena7/800/1000" data-caption="Iris — Her Favorite Flower">
+          <img src="https://picsum.photos/seed/selena7/400/500" alt="Selena Pianissimo 7" loading="lazy">
+          <div class="gallery-overlay"><span>View</span></div>
+        </div>
+        <div class="gallery-item reveal" data-src="https://picsum.photos/seed/selena8/800/1000" data-caption="Pianissimo — Portrait">
+          <img src="https://picsum.photos/seed/selena8/400/500" alt="Selena Pianissimo 8" loading="lazy">
+          <div class="gallery-overlay"><span>View</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <button class="lightbox-prev" id="lightboxPrev">‹</button>
+    <button class="lightbox-next" id="lightboxNext">›</button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="Enlarged artwork">
+      <p id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <!-- ===== GAMEPLAY SECTION ===== -->
+  <section id="gameplay" class="section section-dark">
+    <div class="container">
+      <h2 class="section-title reveal">Gameplay</h2>
+      <p class="section-desc reveal">Pianissimo is an S-Rank Physical Attacker who dominates the battlefield with sound.</p>
+
+      <div class="gameplay-grid">
+        <div class="gameplay-card reveal">
+          <h3>🎵 Musical Notes</h3>
+          <p>Accumulate Musical Notes to enhance her physical damage output. Her core passive revolves around managing these notes for devastating attacks.</p>
+        </div>
+        <div class="gameplay-card reveal">
+          <h3>🎻 Bowstring Rapier</h3>
+          <p>Her signature weapon directs the suppression device to play a song that creates overwhelming sound waves, sweeping across the battlefield like a storm.</p>
+        </div>
+        <div class="gameplay-card reveal">
+          <h3>❄️ Glaciation</h3>
+          <p>Pianissimo deals Glaciation damage, freezing enemies and controlling the flow of combat with her icy melodies.</p>
+        </div>
+        <div class="gameplay-card reveal">
+          <h3>🐺 Snow Waltz (CUB)</h3>
+          <p>Her CUB, "Snow Waltz," is an audio companion capable of sound wave attacks and playback. It has become one of her creators at her music studio.</p>
+        </div>
+      </div>
+
+      <div class="gameplay-stats reveal">
+        <h3>Base Stats (Level 80 / SS Rank)</h3>
+        <div class="stat-bar">
+          <span>HP</span>
+          <div class="bar"><div class="fill" style="width: 85%"></div></div>
+          <span>4200</span>
+        </div>
+        <div class="stat-bar">
+          <span>ATK</span>
+          <div class="bar"><div class="fill" style="width: 92%"></div></div>
+          <span>1350</span>
+        </div>
+        <div class="stat-bar">
+          <span>DEF</span>
+          <div class="bar"><div class="fill" style="width: 70%"></div></div>
+          <span>620</span>
+        </div>
+        <div class="stat-bar">
+          <span>CRIT</span>
+          <div class="bar"><div class="fill" style="width: 78%"></div></div>
+          <span>—</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QR CODE SECTION ===== -->
+  <section id="qr" class="section">
+    <div class="container qr-container">
+      <h2 class="section-title reveal">Share This Page</h2>
+      <p class="section-desc reveal">Scan the QR code to open this fan page on your phone.</p>
+      <div class="qr-wrapper reveal">
+        <div class="qr-frame">
+          <img id="qrImage" src="" alt="QR Code for this page">
+        </div>
+        <p class="qr-note">Point your camera at the code</p>
+      </div>
+      <p class="qr-url reveal" id="qrUrl"></p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p class="footer-logo">Selena <span>Pianissimo</span></p>
+      <p class="footer-disclaimer">
+        This is a fan-made tribute page. All character artwork and intellectual property belong to Kuro Games.
+        No copyright infringement intended.
+      </p>
+      <p class="footer-copy">Made with ♪ for the Gray Raven Commandant</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
